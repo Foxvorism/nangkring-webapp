@@ -31,17 +31,25 @@ export default function AdminLandingPage() {
 
   const menuButtons = [
     {
-      label: "In-Gate (Motorbike)",
+      label: "Gate-In (Motorbike)",
       icon: <Bike className="w-5 h-5" />,
-      href: "#",
+      href: "/admin/dashboard/gate-in?type=motorbike",
     },
     {
-      label: "Out-Gate (Motorbike)",
+      label: "Gate-Out (Motorbike)",
       icon: <Bike className="w-5 h-5" />,
-      href: "#",
+      href: "/admin/dashboard/gate-out?type=motorbike",
     },
-    { label: "In-Gate (Car)", icon: <Car className="w-5 h-5" />, href: "#" },
-    { label: "Out-Gate (Car)", icon: <Car className="w-5 h-5" />, href: "#" },
+    {
+      label: "Gate-In (Car)",
+      icon: <Car className="w-5 h-5" />,
+      href: "/admin/dashboard/gate-in?type=car",
+    },
+    {
+      label: "Gate-Out (Car)",
+      icon: <Car className="w-5 h-5" />,
+      href: "/admin/dashboard/gate-out?type=car",
+    },
     {
       label: "Parking Log",
       icon: <ClipboardList className="w-5 h-5" />,
