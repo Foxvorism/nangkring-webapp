@@ -13,7 +13,7 @@ export default function GateOutPage() {
   const vehicleType = searchParams.get("type") || "car";
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [currentTime, setCurrentTime] = useState("00:00:00");
-  const [licensePlate, setLicensePlate] = useState("B1234XYZ");
+  const [licensePlate, setLicensePlate] = useState("");
   const [gateStatus, setGateStatus] = useState("Closed");
   const [cameraError, setCameraError] = useState<string | null>(null);
   const [cameraReady, setCameraReady] = useState(false);
@@ -298,28 +298,30 @@ export default function GateOutPage() {
             </CardContent>
           </Card>
         </div>
-        <div className="col-span-2 row-span-6 h-full min-h-0">
+        <div className="col-span-2 row-span-2 min-h-0">
           <Card className="w-full h-full p-5">
             <CardHeader>
               <CardTitle className="flex items-center gap-5">
-                <h1 className="tracking-[5%]">Gate-Out log</h1>
+                <h1 className="tracking-[5%]">Parking Duration</h1>
               </CardTitle>
             </CardHeader>
-            <hr />
             <CardContent>
-              <div className="text-left gap-2 flex flex-col max-h-[45vh] overflow-auto">
-                {parkingLogs.map((log) => (
-                  <div
-                    key={log.id}
-                    className="text-lg font-mono flex justify-between pr-3"
-                  >
-                    <span className="text-secondary-color">{log.time}</span>
-                    <span className="truncate capitalize">
-                      {log.plate}{" "}
-                      {log.vehicle_type ? `(${log.vehicle_type})` : ""}
-                    </span>
-                  </div>
-                ))}
+              <div className="text-7xl font-bold tracking-widest text-center">
+                0 Hour
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+        <div className="col-span-2 row-span-2 min-h-0">
+          <Card className="w-full h-full p-5">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-5">
+                <h1 className="tracking-[5%]">Parking Fee</h1>
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="text-7xl font-bold tracking-widest text-center">
+                Rp 0
               </div>
             </CardContent>
           </Card>
@@ -334,7 +336,7 @@ export default function GateOutPage() {
             </CardHeader>
             <CardContent>
               <div className="text-7xl font-bold tracking-widest">
-                {licensePlate || "XXXX-XXXX"}
+                {"X-XXXX-XX"}
               </div>
             </CardContent>
           </Card>
@@ -349,6 +351,32 @@ export default function GateOutPage() {
             <CardContent>
               <div className="text-7xl font-bold tracking-widest text-center">
                 {gateStatus}
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+        <div className="col-span-2 row-span-2 min-h-0">
+          <Card className="w-full h-full p-5">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-5">
+                <h1 className="tracking-[5%]">Gate-Out log</h1>
+              </CardTitle>
+            </CardHeader>
+            <hr />
+            <CardContent>
+              <div className="text-left gap-2 flex flex-col max-h-[7vh] overflow-auto">
+                {parkingLogs.map((log) => (
+                  <div
+                    key={log.id}
+                    className="text-lg font-mono flex justify-between pr-3"
+                  >
+                    <span className="text-secondary-color">{log.time}</span>
+                    <span className="truncate capitalize">
+                      {log.plate}{" "}
+                      {log.vehicle_type ? `(${log.vehicle_type})` : ""}
+                    </span>
+                  </div>
+                ))}
               </div>
             </CardContent>
           </Card>
