@@ -50,7 +50,7 @@ export default function AdminLandingPage() {
   ];
 
   return (
-    <main className="min-h-screen bg-backgroundColor flex flex-col items-center justify-center p-6">
+    <main className="min-h-screen bg-background-color flex flex-col items-center justify-center p-6">
       <div className="w-full max-w-3xl flex flex-col items-center space-y-8 text-center">
         {/* Logo & Avatar */}
         <div className="flex flex-col items-center gap-6">
