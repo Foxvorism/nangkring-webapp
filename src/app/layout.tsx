@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
-import { Lato } from "next/font/google";
+import { Bebas_Neue, Lato } from "next/font/google";
 import "./globals.css";
 import Providers from "@/components/Providers";
+
+const bebasNeue = Bebas_Neue({
+  variable: "--font-bebas",
+  subsets: ["latin"],
+  weight: "400",
+});
 
 const lato = Lato({
   variable: "--font-lato",
@@ -22,7 +28,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${lato.variable} h-full antialiased`}
+      className={`${bebasNeue.variable} ${lato.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col">
