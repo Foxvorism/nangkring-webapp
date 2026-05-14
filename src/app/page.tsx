@@ -115,7 +115,7 @@ export default function Dashboard() {
 
   return (
     <main className="p-10 bg-slate-50 min-h-screen">
-      <Toaster position="top-center" richColors />
+      <Toaster position="top-right" richColors />
       <div className="max-w-5xl mx-auto space-y-6">
         <div className="flex justify-between items-center">
           <h1 className="text-3xl font-bold tracking-tight text-slate-900">
@@ -140,7 +140,7 @@ export default function Dashboard() {
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {logs.map((log: any) => (
+                {/* {logs.map((log: any) => (
                   <TableRow key={log.id}>
                     <TableCell className="font-medium uppercase">
                       {log.plate_number}
@@ -164,7 +164,7 @@ export default function Dashboard() {
                       Rp {log.total_amount.toLocaleString("id-ID")}
                     </TableCell>
                   </TableRow>
-                ))}
+                ))} */}
               </TableBody>
             </Table>
           </CardContent>
